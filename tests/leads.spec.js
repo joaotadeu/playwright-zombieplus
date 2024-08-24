@@ -15,4 +15,8 @@ test('deve cadastrar um lead na fila de espera', async ({ page }) => {
     .getByText('Quero entrar na fila!')
     .click();
 
+  const message = 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!';
+  await expect(page.locator('.toast')).toHaveText(message);
+  await expect(page.locator('.toast')).toBeHidden({ timeout: 5000 });
+
 });
