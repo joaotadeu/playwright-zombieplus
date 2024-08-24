@@ -11,5 +11,8 @@ test('deve cadastrar um lead na fila de espera', async ({ page }) => {
 
   await page.getByPlaceholder('Seu nome completo').fill('joao tadeu');
   await page.getByPlaceholder('Seu email principal').fill('joaotadeu@outlook.com');
+  await page.getByTestId('modal')
+    .getByText('Quero entrar na fila!')
+    .click();
 
 });
